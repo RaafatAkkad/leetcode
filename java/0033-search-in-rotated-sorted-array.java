@@ -6,7 +6,9 @@ class Solution {
 
         while(l<=r){
 
-            int mid = (l+r)/2;
+            // mid is calculated this way to prevent integer overflow.
+            // See: https://blog.research.google/2006/06/extra-extra-read-all-about-it-nearly.html
+            int mid = l + (r - l) / 2;
 
             if(nums[mid] == target){
                 return mid;
